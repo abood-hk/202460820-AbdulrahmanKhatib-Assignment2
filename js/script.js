@@ -42,7 +42,7 @@ contactForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
   formStatus.textContent =
-    "Thank you for your message. I will get back to you soon.";
+    "Thank you for your message. Currently the form does not send me the message.";
 
   contactForm.reset();
 });
