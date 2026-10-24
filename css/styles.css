@@ -197,6 +197,65 @@ h3 {
   justify-content: center;
 }
 
+.project-search {
+  margin-top: 28px;
+  max-width: 480px;
+}
+
+.project-search label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.project-search-field {
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  color: var(--muted-text);
+  display: flex;
+  gap: 12px;
+  padding: 14px 16px;
+  transition: border-color 0.2s ease;
+}
+
+.project-search-field:hover {
+  border-color: var(--primary);
+}
+
+.project-search-field:focus-within {
+  border-color: var(--primary);
+  color: var(--primary);
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+.project-search-field svg {
+  flex-shrink: 0;
+}
+
+.project-search input {
+  background: transparent;
+  border: 0;
+  color: var(--text);
+  font: inherit;
+  min-width: 0;
+  outline: none; /* The containing field displays the focus outline. */
+  width: 100%;
+}
+
+.project-search input::placeholder {
+  color: var(--muted-text);
+  opacity: 1;
+}
+
+body.dark .project-search input {
+  color-scheme: dark;
+}
+
 .project-grid {
   display: grid;
   gap: 24px;
