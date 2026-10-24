@@ -7,6 +7,7 @@ const currentYear = document.getElementById("current-year");
 const search = document.getElementById("search");
 const projectsContainer = document.querySelector(".project-grid");
 const headings = projectsContainer.querySelectorAll("h3");
+const noResults = document.getElementById("no-results");
 
 // Display a greeting based on the current time.
 const hour = new Date().getHours();
@@ -51,12 +52,18 @@ currentYear.textContent = new Date().getFullYear();
 
 //search bar logic
 search.addEventListener("input", () => {
+  let counter = 0;
+  noResults.hidden = true;
   headings.forEach((head) => {
     const card = head.closest(".project-card");
     if (!head.textContent.toLowerCase().includes(search.value.toLowerCase())) {
       card.hidden = true;
+      counter++;
     } else {
       card.hidden = false;
+    }
+    if (counter == headings.length) {
+      noResults.hidden = false;
     }
   });
 });
