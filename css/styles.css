@@ -45,6 +45,12 @@ a {
   text-decoration: none;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
+
 .container {
   margin: 0 auto;
   max-width: 1100px;
@@ -96,8 +102,15 @@ nav a:hover {
   padding: 8px 12px;
 }
 
+.theme-status {
+  color: var(--muted-text);
+  font-size: 0.9rem;
+  padding-bottom: 12px;
+}
+
 .section {
   padding: 90px 0;
+  scroll-margin-top: 100px;
 }
 
 .hero {
@@ -256,6 +269,16 @@ body.dark .project-search input {
   color-scheme: dark;
 }
 
+.search-empty {
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  color: var(--muted-text);
+  grid-column: 1 / -1;
+  padding: 24px;
+  text-align: center;
+}
+
 .project-grid {
   display: grid;
   gap: 24px;
@@ -369,6 +392,7 @@ body.dark .project-search input {
 
   .section {
     padding: 65px 0;
+    scroll-margin-top: 150px;
   }
 
   .hero-content,
@@ -383,5 +407,21 @@ body.dark .project-search input {
 
   .profile-card {
     height: 220px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body,
+  .button,
+  .project-search-field {
+    transition: none;
+  }
+
+  .button:hover {
+    transform: none;
   }
 }

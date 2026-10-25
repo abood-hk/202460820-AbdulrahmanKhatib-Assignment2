@@ -1,7 +1,12 @@
-```gitignore
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
 node_modules/
 *.log
+
+# AI evidence is submitted separately on Blackboard.
+/conversations/
+/artifacts/
+/ai-evidence/
+*-ai-evidence.zip
